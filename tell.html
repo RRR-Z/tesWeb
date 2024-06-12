@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>答疑讨论</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .question-form, .reply-form {
+      margin-bottom: 20px;
+    }
+    .question-form h2, .reply-form h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #007BFF;
+    }
+    .question-form input, .reply-form input, .question-form textarea, .reply-form textarea {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .question-form input:focus, .reply-form input:focus, .question-form textarea:focus, .reply-form textarea:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+    .question-form button, .reply-form button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .question-form button:hover, .reply-form button:hover {
+      background-color: #0056b3;
+    }
+    .question, .reply {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      background-color: #f1f1f1;
+    }
+    .question-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    .question-content {
+      margin-bottom: 10px;
+      color: #555;
+    }
+    .replies {
+      margin-top: 10px;
+      margin-left: 20px;
+      padding-left: 10px;
+      border-left: 2px solid #ccc;
+    }
+    .reply {
+      margin-bottom: 5px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #e9e9e9;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>答疑讨论</h1>
+  <div class="question-form">
+    <h2>提问</h2>
+    <input type="text" id="questionTitle" placeholder="标题">
+    <textarea id="questionContent" rows="4" placeholder="请在这里输入您的问题"></textarea>
+    <button onclick="submitQuestion()">提交问题</button>
+  </div>
+  <div id="questionsContainer"></div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    loadQuestions();
+  });
+
+  function loadQuestions() {
+    const questionsContainer = document.getElementById('questionsContainer');
+    questionsContainer.innerHTML = '';
+    const questions = JSON.parse(localStorage.getItem('questions')) || [];
+
+    questions.forEach((question, index) => {
+      const questionElement = document.createElement('div');
+      questionElement.className = 'question';
+      questionElement.innerHTML = `
+                    <div class="question-title">${question.title}</div>
+                    <div class="question-content">${question.content}</div>
+                    <div class="replies">
+                        ${question.replies.map(reply => `<div class="reply">${reply}</div>`).join('')}
+                    </div>
+                    <div class="reply-form">
+                        <textarea id="replyContent-${index}" rows="2" placeholder="回复"></textarea>
+                        <button onclick="submitReply(${index})">提交回复</button>
+                    </div>
+                `;
+      questionsContainer.appendChild(questionElement);
+    });
+  }
+
+  function submitQuestion() {
+    const title = document.getElementById('questionTitle').value;
+    const content = document.getElementById('questionContent').value;
+
+    if (title && content) {
+      const questions = JSON.parse(localStorage.getItem('questions')) || [];
+      questions.push({ title: title, content: content, replies: [] });
+      localStorage.setItem('questions', JSON.stringify(questions));
+      document.getElementById('questionTitle').value = '';
+      document.getElementById('questionContent').value = '';
+      loadQuestions();
+    } else {
+      alert('请填写标题和内容');
+    }
+  }
+
+  function submitReply(index) {
+    const replyContent = document.getElementById(`replyContent-${index}`).value;
+    if (replyContent) {
+      const questions = JSON.parse(localStorage.getItem('questions')) || [];
+      questions[index].replies.push(replyContent);
+      localStorage.setItem('questions', JSON.stringify(questions));
+      document.getElementById(`replyContent-${index}`).value = '';
+      loadQuestions();
+    } else {
+      alert('请填写回复内容');
+    }
+  }
+</script>
+</body>
+</html>

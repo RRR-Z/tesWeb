@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学习内容</title>
+    <link rel="stylesheet" href="static/css/3neirong.css">
+</head>
+<style>
+    body{
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        cursor: url("img/logo/blue.png") auto;
+    }
+
+    ::-webkit-scrollbar {
+        width: 3px; /* 设置垂直滚动条的宽度 */
+        height: 5px; /* 设置水平滚动条的高度 */
+    }
+
+    /* 滚动条轨道 */
+    ::-webkit-scrollbar-track {
+        background: rgba(241, 241, 241, 0); /* 设置滚动条轨道的颜色 */
+        border-radius: 10px; /* 设置轨道的圆角 */
+    }
+
+    /* 滚动条滑块 */
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, red, orange, yellow, green, blue, indigo, violet); /* 设置渐变色 */
+        border-radius: 50px; /* 设置滑块的圆角 */
+    }
+
+    /* 当用户悬停在滚动条滑块上时 */
+    ::-webkit-scrollbar-thumb:hover {
+        /*background: linear-gradient(180deg, violet, indigo, blue, green, yellow, orange, red);*/
+        background: black;
+    }
+</style>
+<body>
+<div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+    <div class="accordion-body">
+        <div id="xrb">
+            <div id="box" style="margin: 50px 10px">
+                <div class="box-left" style="width: 200px;height: 680px;overflow: auto;">
+                    <button class="accordion">第一章 网络安全概述</button>
+                    <div class="panel">
+                        <button class="tablink" onclick="openPage('q1', this, '#ccc')">
+                            &raquo;&raquo;1.1、网络安全简介、网络安全涉及的内容
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('q2', this, '#ccc')">
+                            &raquo;&raquo;1.2、网络安全防护体系
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('qv', this, '#ccc')">
+                            &raquo;&raquo;章节视频
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('qe', this, '#ccc')">
+                            &raquo;&raquo;章节测试
+                        </button>
+                    </div>
+                    <button class="accordion">第二章 黑客原理与防范措施</button>
+                    <div class="panel">
+                        <button class="tablink" onclick="openPage('a1', this, '#ccc')">
+                            &raquo;&raquo;2.1黑客概述及目标系统的探测（nmap）
+                        </button>
+<!--                        <br>-->
+<!--                        <button class="tablink" onclick="openPage('av1', this, '#ccc')">-->
+<!--                            &raquo;&raquo;2.1视频-->
+<!--                        </button>-->
+                        <br>
+                        <button class="tablink" onclick="openPage('a2', this, '#ccc')">
+                            &raquo;&raquo;2.2 目标扫描（XSCAN)
+                        </button>
+<!--                        <br>-->
+<!--                        <button class="tablink" onclick="openPage('av2', this, '#ccc')">-->
+<!--                            &raquo;&raquo;2.2视频-->
+<!--                        </button>-->
+                        <br>
+                        <button class="tablink" onclick="openPage('a3', this, '#ccc')">
+                            &raquo;&raquo;2.3口令破解过程（smbcrack2）
+                        </button>
+<!--                        <br>-->
+<!--                        <button class="tablink" onclick="openPage('av3', this, '#ccc')">-->
+<!--                            &raquo;&raquo;2.3视频-->
+<!--                        </button>-->
+                        <br>
+                        <button class="tablink" onclick="openPage('a4', this, '#ccc')">
+                            &raquo;&raquo;2.4 网络监听工具的使用（sniffer）
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('a5', this, '#ccc')">
+                            &raquo;&raquo;2.5木马的攻防（冰河木马）
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('a6', this, '#ccc')">
+                            &raquo;&raquo;2.6 拒绝服务攻击（DDoS）
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('a7', this, '#ccc')">
+                            &raquo;&raquo;2.7ARP攻击的防范
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('a8', this, '#ccc')">
+                            &raquo;&raquo;2.8 缓冲区溢出
+                        </button>
+                        <br>
+                        <br>
+                        <button class="tablink" onclick="openPage('av1', this, '#ccc')">
+                            &raquo;&raquo;章节视频1
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('av2', this, '#ccc')">
+                            &raquo;&raquo;章节视频2
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('av3', this, '#ccc')">
+                            &raquo;&raquo;章节视频3
+                        </button>
+                        <button class="tablink" onclick="openPage('ae', this, '#ccc')">
+                            &raquo;&raquo;章节测试
+                        </button>
+                    </div>
+
+                    <button class="accordion">第三章 网络病毒防治</button>
+                    <div class="panel">
+                        <button class="tablink" onclick="openPage('b1', this, '#ccc')">
+                            &raquo;&raquo;3.1病毒的基本概念、原理和分类
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('b2', this, '#ccc')">
+                            &raquo;&raquo;3.2计算机感染典型病毒的现象
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('b3', this, '#ccc')">
+                            &raquo;&raquo;3.3常用的杀毒软件介绍
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('bv', this, '#ccc')">
+                            &raquo;&raquo;章节视频
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('be', this, '#ccc')">
+                            &raquo;&raquo;章节测试
+                        </button>
+                    </div>
+
+                    <button class="accordion">第四章 密码技术</button>
+                    <div class="panel">
+                        <button class="tablink" onclick="openPage('c1', this, '#ccc')">
+                            &raquo;&raquo;4.1密码学的基本概念及数据加密技术在网络安全中的应用
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('c2', this, '#ccc')">
+                            &raquo;&raquo;4.2数据加密、传送及解密
+                        </button>
+                        </br>
+                        <button class="tablink" onclick="openPage('cv', this, '#ccc')">
+                            &raquo;&raquo;章节视频
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('ce', this, '#ccc')">
+                            &raquo;&raquo;章节测试
+                        </button>
+                    </div>
+
+                    <button class="accordion">第五章 防火墙技术</button>
+                    <div class="panel">
+                        <button class="tablink" onclick="openPage('d1', this, '#ccc')">
+                            &raquo;&raquo;5.1防火墙的基本概念及掌握防火墙的工作基本原理
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('d2', this, '#ccc')">
+                            &raquo;&raquo;5.2第三方防火墙介绍
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('d3', this, '#ccc')">
+                            &raquo;&raquo;5.3 VPN
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('dv', this, '#ccc')">
+                            &raquo;&raquo;章节视频
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('de', this, '#ccc')">
+                            &raquo;&raquo;章节测试
+                        </button>
+                    </div>
+
+                    <button class="accordion">第六章 Windows的安全与保护机制</button>
+                    <div class="panel">
+                        <button class="tablink" onclick="openPage('e1', this, '#ccc')">
+                            &raquo;&raquo;6.1Windows系统的安全机制，掌握Windows系统的常用安全设置(1)
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('e2', this, '#ccc')">
+                            &raquo;&raquo;6.2Windows Server的帐户管理
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('e3', this, '#ccc')">
+                            &raquo;&raquo;6.3windows server注册表与组策略
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('e4', this, '#ccc')">
+                            &raquo;&raquo;6.4Windows Server常用的系统进程和服务
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('e5', this, '#ccc')">
+                            &raquo;&raquo;6.5windows server的日志管理
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('ev', this, '#ccc')">
+                            &raquo;&raquo;章节视频
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('ee', this, '#ccc')">
+                            &raquo;&raquo;章节测试
+                        </button>
+                    </div>
+
+                    <button class="accordion">第七章 Web应用安全</button>
+                    <div class="panel">
+                        <button class="tablink" onclick="openPage('f1', this, '#ccc')">
+                            &raquo;&raquo;7.1Web安全概述
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('f2', this, '#ccc')">
+                            &raquo;&raquo;7.2web应用程序安全
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('f3', this, '#ccc')">
+                            &raquo;&raquo;7.3Web服务器软件的安全
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('f4', this, '#ccc')">
+                            &raquo;&raquo;7.4web传输安全及SSL安全
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('fv', this, '#ccc')">
+                            &raquo;&raquo;章节视频
+                        </button>
+                        <br>
+                        <button class="tablink" onclick="openPage('fe', this, '#ccc')">
+                            &raquo;&raquo;章节测试
+                        </button>
+                    </div>
+                </div>
+                <div class="box-right" style="height: 680px">
+                    <!------------ PPT内容 ------------>
+                    <div id="q1" class="tabcontent">
+                        <!-- <h3>PPT1-1</h3> -->
+                        <iframe src="img/PPT/1/1.网络安全简介、网络安全涉及的内容.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="q2" class="tabcontent">
+                        <iframe src="img/PPT/1/2.网络安全防护体系.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="qv" class="tabcontent">
+                        <video controls src="img/vidio/网络安全概述.mp4" width="950px"
+                               height="680"></video>
+                    </div>
+                    <div id="qe" class="tabcontent">
+                        <iframe src="Question/1.html" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="a1" class="tabcontent">
+                        <iframe src="img/PPT/2/3.黑客概述及目标系统的探测nmap.pdf"
+                                width="950px" height="680"></iframe>
+                    </div>
+                    <div id="a2" class="tabcontent">
+                        <iframe src="img/PPT/2/4.目标扫描（xscan）.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="a3" class="tabcontent">
+                        <iframe src="img/PPT/2/5.口令破解过程（smbcrack2）.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="a4" class="tabcontent">
+                        <iframe src="img/PPT/2/6.网络监听工具的使用（sniffer）.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="a5" class="tabcontent">
+                        <iframe src="img/PPT/2/7.木马的攻防（冰河木马）.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="a6" class="tabcontent">
+                        <iframe src="img/PPT/2/8.拒绝服务攻击（DDoS）.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="a7" class="tabcontent">
+                        <iframe src="img/PPT/2/9.ARP攻击的防范.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="a8" class="tabcontent">
+                        <iframe src="img/PPT/2/10.缓冲区溢出.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="av1" class="tabcontent">
+                        <video src="img/vidio/NMAP.mp4" width="950px"
+                               height="680" controls></video>
+                    </div>
+                    <div id="av2" class="tabcontent">
+                        <video controls src="img/vidio/目标扫描XSCAN.mp4" width="950px"
+                               height="680"></video>
+                    </div>
+                    <div id="av3" class="tabcontent">
+                        <video controls src="img/vidio/sniffer.mp4" width="950px"
+                               height="680"></video>
+                    </div>
+                    <div id="ae" class="tabcontent">
+                        <iframe src="Question/2.html" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="b1" class="tabcontent">
+                        <iframe src="img/PPT/3/11.病毒的基本概念、原理和分类.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="b2" class="tabcontent">
+                        <iframe src="img/PPT/3/12.计算机感染典型病毒的现象.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="b3" class="tabcontent">
+                        <iframe src="img/PPT/3/13.常用的杀毒软件介绍.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="bv" class="tabcontent">
+                        <video controls src="img/vidio/计算机感染典型病毒的现象.mp4" width="950px"
+                               height="680"></video>
+                    </div>
+                    <div id="be" class="tabcontent">
+                        <iframe src="Question/3.html" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="c1" class="tabcontent">
+                        <iframe src="img/PPT/4/密码学的基本概念及数据加密技术在网络安全中的应用.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="c2" class="tabcontent">
+                        <iframe src="img/PPT/4/数据加密、传送及解密.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="cv" class="tabcontent">
+                        <video controls src="img/vidio/密码技术.mp4" width="950px"
+                               height="680"></video>
+                    </div>
+                    <div id="ce" class="tabcontent">
+                        <iframe src="Question/4.html" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="d1" class="tabcontent">
+                        <iframe src="img/PPT/5/防火墙的基本概念及掌握防火墙的工作基本原理.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="d2" class="tabcontent">
+                        <iframe src="img/PPT/5/第三方防火墙的应用.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="d3" class="tabcontent">
+                        <iframe src="img/PPT/5/VPN.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="dv" class="tabcontent">
+                        <video controls src="img/vidio/防火墙技术.mp4" width="950px"
+                               height="680"></video>
+                    </div>
+                    <div id="de" class="tabcontent">
+                        <iframe src="Question/5.html" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="e1" class="tabcontent">
+                        <iframe src="img/PPT/6/Windows系统的安全机制与常用安全设置.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="e2" class="tabcontent">
+                        <iframe src="img/PPT/6/Windows+Server的帐户管理.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="e3" class="tabcontent">
+                        <iframe src="img/PPT/6/Windows+Server注册表与组策略.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="e4" class="tabcontent">
+                        <iframe src="img/PPT/6/Windows+Server常用的系统进程和服务.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="e5" class="tabcontent">
+                        <iframe src="img/PPT/6/Windows+Server的日志管理.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="ev" class="tabcontent">
+                        <video controls src="img/vidio/Windows的安全与保护机制.mp4" width="950px"
+                               height="680"></video>
+                    </div>
+                    <div id="ee" class="tabcontent">
+                        <iframe src="Question/6.html" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="f1" class="tabcontent">
+                        <iframe src="img/PPT/7/Web安全概述.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="f2" class="tabcontent">
+                        <iframe src="img/PPT/7/web应用程序安全.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="f3" class="tabcontent">
+                        <iframe src="img/PPT/7/Web服务器软件的安全.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="f4" class="tabcontent">
+                        <iframe src="img/PPT/7/web传输安全及ssl安全.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="fv" class="tabcontent">
+                        <video controls src="img/vidio/Web应用程序安全.mp4" width="950px"
+                               height="680px"></video>
+                    </div>
+                    <div id="fe" class="tabcontent">
+                        <iframe src="Question/7.html" width="950px"
+                                height="680"></iframe>
+                    </div>
+
+                    <div id="g1" class="tabcontent">
+                        <iframe src="img/PPT/常用的杀毒软件介绍.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="g2" class="tabcontent">
+                        <iframe src="img/PPT/计算机病毒的概念、原理和分类.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="g3" class="tabcontent">
+                        <iframe src="img/PPT/计算机感染典型病毒的现象.pdf" width="950px"
+                                height="680"></iframe>
+                    </div>
+                    <div id="ge" class="tabcontent">
+                        <a href="Question/7.html">前往答题</a>
+                        <video src="img/vidio/第三章-病毒.mp4" width="950px"
+                               height="680"></video>
+                    </div>
+                    <!-- ----------视频内容---------- -->
+                    <div id="q3" class="tabcontent">
+                        <!-- 第一章视频 -->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/第一章.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="a9" class="tabcontent">
+                        <!-- 第二章视频-1 -->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/第二章1-nmap实验.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="a10" class="tabcontent">
+                        <!-- 第二章视频-2 -->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/第二章2-木马.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="a11" class="tabcontent">
+                        <!-- 第二章视频 -3-->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/第二章-缓冲区溢出.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="b4" class="tabcontent">
+                        <!-- 第三章视频 -->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/第三章-病毒.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="c3" class="tabcontent">
+                        <!-- 第四章视频 -->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/4%20密码技术微课.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="d4" class="tabcontent">
+                        <!-- 第五章视频 -->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/5%20防火墙微课.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="e6" class="tabcontent">
+                        <!-- 第六章视频 -->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/6%20组策略微课.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="f5" class="tabcontent">
+                        <!-- 第七章视频 -->
+                        <video width="950" height="600" controls class="video">
+                            <source src="img/vidio/7%20web安全应用微课.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var videos = document.getElementsByTagName('video');
+    for (var i = videos.length - 1; i >= 0; i--) {
+        (function () {
+            var p = i;
+            videos[p].addEventListener('play', function () {
+                pauseAll(p);
+            })
+        })()
+    }
+
+    function pauseAll(index) {
+        for (var j = videos.length - 1; j >= 0; j--) {
+            if (j != index) videos[j].pause();
+        }
+    };
+</script>
+<script>
+    let name = sessionStorage.getItem("name")
+    console.log(name)
+    if (name !== null) {
+        document.querySelector("#userName").innerText = name
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            /* 在添加和删除 "active" 类之间切换，
+            突出显示控制面板的按钮 */
+            this.classList.toggle("active");
+
+            /* 在隐藏和显示活动面板之间切换 */
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+<script type="text/javascript">
+    function openPage(pageName, elmnt, color) {
+        // 默认隐藏所有带有 class="tabcontent" 的元素 */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // 删除所有标签链接/按钮的背景颜色
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+
+        // 显示具体的标签内容
+        document.getElementById(pageName).style.display = "block";
+
+        // 为用于打开选项卡内容的按钮添加特定颜色
+        elmnt.style.backgroundColor = color;
+    }
+
+    // 用 id="defaultOpen" 获取元素并点击它
+    document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>

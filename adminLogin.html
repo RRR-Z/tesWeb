@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/css/kongjian.css"/>
+    <link rel="shortcut icon" href="img/logo/bitbug_favicon.ico" type="image/x-icon">
+    <title>管理登录</title>
+</head>
+<body>
+<div id="box" style="margin-top: 130px; background: gray; border-radius: 50px; text-align: center; padding: 20px;">
+    <h1>管理员登录</h1>
+    <input style="border-radius: 5px; margin: 10px 0;" id="rootName" type="text" placeholder="账号" class="input"/><br>
+    <input style="border-radius: 5px; margin: 10px 0;" id="rootPassword" type="password" placeholder="密码" class="input"/><br>
+    <button id="rootlogin" class="btn" style="background: #0dcaf0; border-radius: 5px;margin: auto">登录</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const rootLoginButton = document.getElementById('rootlogin');
+
+        rootLoginButton.addEventListener('click', () => {
+            const username = document.getElementById('rootName').value;
+            const password = document.getElementById('rootPassword').value;
+
+            if (username === 'lfm' || username === "zqq" && password === '12345678') {
+                alert('登录成功');
+                // 这里可以添加登录成功后的逻辑，例如跳转到管理员页面
+                window.location.href = "admin_dashboard.html"; // 假设有一个管理员面板页面
+            } else {
+                alert('账号或密码错误');
+            }
+        });
+    });
+</script>
+</body>
+</html>
